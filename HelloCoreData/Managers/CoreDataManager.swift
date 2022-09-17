@@ -24,4 +24,11 @@ class CoreDataManager {
         }
     }
     
+    func saveMovie(title: String) {
+        var movie = Movie(context: persistentContainer.viewContext)
+        movie.title = title
+        
+        try! persistentContainer.viewContext.save()
+        print("movie saved")
+    }
 }
