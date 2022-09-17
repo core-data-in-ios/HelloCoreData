@@ -27,9 +27,7 @@ class CoreDataManager {
     func saveMovie(title: String) {
         let movie = Movie(context: persistentContainer.viewContext)
         movie.title = title
-        
-        try! persistentContainer.viewContext.save()
-        print("movie saved")
+        saveContext()
     }
     
     func getAllMovies() -> [Movie] {
@@ -42,9 +40,16 @@ class CoreDataManager {
         }
     }
     
+    func updateMovie() {
+        saveContext()
+    }
+    
     func deleteMovie(movie: Movie) {
         persistentContainer.viewContext.delete(movie)
-
+        saveContext()
+    }
+    
+    func saveContext() {
         do {
             try persistentContainer.viewContext.save()
         } catch {
