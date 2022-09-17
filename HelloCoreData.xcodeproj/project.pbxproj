@@ -12,6 +12,7 @@
 		E6EE634028D5817E00954D2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EE633F28D5817E00954D2D /* Assets.xcassets */; };
 		E6EE634328D5817E00954D2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6EE634228D5817E00954D2D /* Preview Assets.xcassets */; };
 		E6EE634B28D581F900954D2D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6EE634928D581F900954D2D /* Model.xcdatamodeld */; };
+		E6EE634E28D5839200954D2D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EE634D28D5839200954D2D /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E6EE633F28D5817E00954D2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6EE634228D5817E00954D2D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6EE634A28D581F900954D2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E6EE634D28D5839200954D2D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		E6EE633A28D5817D00954D2D /* HelloCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				E6EE634C28D5835D00954D2D /* Managers */,
 				E6EE633B28D5817D00954D2D /* HelloCoreDataApp.swift */,
 				E6EE633D28D5817D00954D2D /* ContentView.swift */,
 				E6EE633F28D5817E00954D2D /* Assets.xcassets */,
@@ -68,6 +71,14 @@
 				E6EE634228D5817E00954D2D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E6EE634C28D5835D00954D2D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE634D28D5839200954D2D /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			files = (
 				E6EE633E28D5817D00954D2D /* ContentView.swift in Sources */,
 				E6EE633C28D5817D00954D2D /* HelloCoreDataApp.swift in Sources */,
+				E6EE634E28D5839200954D2D /* CoreDataManager.swift in Sources */,
 				E6EE634B28D581F900954D2D /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
