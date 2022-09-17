@@ -41,4 +41,15 @@ class CoreDataManager {
             return []
         }
     }
+    
+    func deleteMovie(movie: Movie) {
+        persistentContainer.viewContext.delete(movie)
+
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            persistentContainer.viewContext.rollback()
+            fatalError(error.localizedDescription)
+        }
+    }
 }
