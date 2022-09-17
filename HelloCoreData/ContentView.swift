@@ -12,7 +12,7 @@ struct ContentView: View {
     let coreDM: CoreDataManager
     @State private var movieName: String = ""
     @State private var movies: [Movie] = [Movie]()
-    
+    @State private var needsRefresh : Bool = false
     var body: some View {
         NavigationView {
             VStack {
@@ -24,7 +24,7 @@ struct ContentView: View {
                 
                 List {
                     ForEach(movies, id:\.self) { movie in
-                        NavigationLink(destination: MoviedetailView(movie: movie, coreDM: coreDM),
+                        NavigationLink(destination: MoviedetailView(movie: movie, coreDM: coreDM, needsRefresh: $needsRefresh),
                                        label: {
                             Text(movie.title ?? "" )
                         })
@@ -38,6 +38,9 @@ struct ContentView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
+                
+                // this is done to use needsRefresh, which will then cause the view to re-render itself when needsRefresh changes in the detail view controller
+                .accentColor(needsRefresh ? .white : .black)
                 Spacer()
             }
             .padding()

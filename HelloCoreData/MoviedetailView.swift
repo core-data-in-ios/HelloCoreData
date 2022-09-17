@@ -11,6 +11,7 @@ struct MoviedetailView: View {
     
     let movie: Movie
     let coreDM: CoreDataManager
+    @Binding var needsRefresh: Bool
     @State private var movieName: String = ""
     
     var body: some View {
@@ -18,7 +19,9 @@ struct MoviedetailView: View {
             TextField(movie.title ?? "", text: $movieName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button("Update") {
+                movie.title = movieName
                 coreDM.updateMovie()
+                needsRefresh.toggle()
             }
             Spacer()
         }
@@ -33,6 +36,6 @@ struct MoviedetailView_Previews: PreviewProvider {
         let coreDM = CoreDataManager()
         let movie = Movie(context: coreDM.persistentContainer.viewContext)
         
-        MoviedetailView(movie: movie, coreDM: coreDM)
+        MoviedetailView(movie: movie, coreDM: coreDM, needsRefresh: .constant(false))
     }
 }
