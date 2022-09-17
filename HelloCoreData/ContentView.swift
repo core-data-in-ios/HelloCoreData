@@ -10,13 +10,15 @@ import SwiftUI
 struct ContentView: View {
     
     let coreDM: CoreDataManager
+    @State private var movieName: String = ""
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TextField("Enter movie name", text: $movieName)
+            Button("Save") {
+                coreDM.saveMovie(title: movieName)
+            }
+            Spacer()
         }
         .padding()
     }
